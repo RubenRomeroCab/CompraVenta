@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { PoliticasEnvioComponent } from './components/politicas-envio/politicas-envio.component';
+import { CarritoDetailsComponent } from './components/carrito-details/carrito-details.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/body', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path:'pale-details',component:PaleDetailsComponent},
     {path:'about',component:AboutComponent},
     {path:'contacto',component:ContactoComponent},
-    {path:'politicas-envio',component:PoliticasEnvioComponent}
+    {path:'politicas-envio',component:PoliticasEnvioComponent},
+    {path:'carrito-details',component:CarritoDetailsComponent}
 ];
