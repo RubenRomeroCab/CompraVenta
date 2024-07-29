@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-politicas-envio',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   templateUrl: './politicas-envio.component.html',
   styleUrl: './politicas-envio.component.css'
 })
-export class PoliticasEnvioComponent {
+export class PoliticasEnvioComponent  {
+
+
 
 }
