@@ -1,6 +1,6 @@
 <div class="container ">
     <div class="table-responsive mt-4">
-        <table class="table text-center">
+        <table class="table text-center border-secundary">
             <thead>
                 <tr>
                     <th style="width: 34%;">Pales</th>
@@ -15,7 +15,7 @@
                             viewBox="0 -960 960 960" width="24px" fill="#EA3323">
                             <path
                                 d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                        </svg> Palé de Electrodomésticos [25 productos] (DSV24002030)</th>
+                        </svg> Palé de Electrodomésticos [25 productos] (DSV24002030)
 
 
                     <td>1450</td>
@@ -25,7 +25,7 @@
                             viewBox="0 -960 960 960" width="24px" fill="#EA3323">
                             <path
                                 d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                        </svg> Palé de Electrodomésticos [18 productos] (DSV24002024)</th>
+                        </svg> Palé de Electrodomésticos [18 productos] (DSV24002024)
 
 
                     <td>3250 €</td>
@@ -34,13 +34,14 @@
 
             <tbody>
                 <tr>
-                    <th scope="row" class="text-start"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                    <th (click)="verPale()" scope="row" class="text-start">
+                        
+                        <svg (click)="borrarPale($event)" xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="#EA3323">
                             <path
                                 d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
                         </svg>
-                        Palé de Electrodomésticos [23 productos] (DSV24001942)</th>
-
+                        Palé de Electrodomésticos [23 productos] (DSV24001942)
 
                     <td>5000 € </td>
                 </tr>
@@ -50,7 +51,7 @@
                             <path
                                 d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
                         </svg>
-                        Palé de Electrodomésticos [5 productos] (DSV24001725)</th>
+                        Palé de Electrodomésticos [5 productos] (DSV24001725)
 
 
                     <td>1400 </td>
@@ -62,7 +63,7 @@
                                 d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
                         </svg>
                         Palé de Electrodomésticos [5 productos] (DSV24001725)
-                    </th>
+                   
 
 
                     <td>1500 € </td>
@@ -88,7 +89,7 @@
                     <li>IVA 202,19 €</li>
                     <li>Total 1.165,00 €</li>
                 </ul>
-                <button type="button" class="w-100 btn btn-lg btn-primary">Finalizar Compra</button>
+                <button [routerLink]="['/carrito-end']" routerLinkActive="router-link-active"  type="button" class="w-100 btn btn-lg btn-primary">Finalizar Compra</button>
             </div>
         </div>
     </div>

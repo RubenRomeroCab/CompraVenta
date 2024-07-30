@@ -1,0 +1,4 @@
+#notas {
+    height: 200px;  /* Altura del textarea */
+    width: 100%;    /* Ancho del textarea (ajustado al 100% del contenedor) */
+  }

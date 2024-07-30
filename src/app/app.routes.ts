@@ -6,6 +6,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { PoliticasEnvioComponent } from './components/politicas-envio/politicas-envio.component';
 import { CarritoDetailsComponent } from './components/carrito-details/carrito-details.component';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
+import { CarritoEndComponent } from './components/carrito-end/carrito-end.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/body', pathMatch: 'full' },
@@ -15,5 +17,7 @@ export const routes: Routes = [
     {path:'about',component:AboutComponent},
     {path:'contacto',component:ContactoComponent},
     {path:'politicas-envio',component:PoliticasEnvioComponent},
-    {path:'carrito-details',component:CarritoDetailsComponent}
+    {path:'carrito-details',component:CarritoDetailsComponent},
+    {path:'subcribe',component:SubscribeComponent},
+    {path:'carrito-end',component:CarritoEndComponent}
 ];
