@@ -5,3 +5,8 @@
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed; /* Hace que la imagen se quede fija al hacer scroll */
 }
+
+.contenedor-img {
+    max-width: 100%;
+    height: auto;
+}
