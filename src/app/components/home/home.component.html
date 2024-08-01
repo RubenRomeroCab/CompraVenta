@@ -1,9 +1,9 @@
 <div class="container">
   
-    <div class="mt-5 text-center bg-body-tertiary rounded-4">
+    <div class="mt-1 text-center bg-body-tertiary rounded-4">
       
       
-      <h1 class="text-body-emphasis mb-3">¡Bienvenido a PaletDirecto!</h1>
+      <h1 class="text-body-emphasis mt-3">¡Bienvenido a PaletDirecto!</h1>
       <div class="d-lg-inline mt-4 mb-4 ">
         <img src="insta30.png" alt="" class="me-3">
         <img src="youtube.png" alt="" class="me-3">
@@ -54,34 +54,14 @@
     <h3 class="text-center">Productos destacados</h3>
     <div class="container text-center">
       <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card">
+        <div  *ngFor="let item of paleDestacado" class="col-lg-4 col-md-6 mb-4 ">
+          <div *ngIf="paleDestacado" class="card ">
             <img src="pale.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">Palé de Electrodomésticos <span class="text-body-secondary"><br>[31 productos]</span></h3>
-              <p class="lead">Palé de Electrodomésticos sin revisar procedente de Amazon Devoluciones</p>
-              <a  class="btn btn-primary">Ver contenido</a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card">
-            <img src="pale.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">Palé de Electrodomésticos <span class="text-body-secondary"><br>[31 productos]</span></h3>
-              <p class="lead">Palé de Electrodomésticos sin revisar procedente de Amazon Devoluciones</p>
-              <a href="#" class="btn btn-primary">Ver contenido</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card">
-            <img src="pale.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">Palé de Electrodomésticos <span class="text-body-secondary"><br>[31 productos]</span></h3>
-              <p class="lead">Palé de Electrodomésticos sin revisar procedente de Amazon Devoluciones</p>
-              <a href="#" class="btn btn-primary">Ver contenido</a>
+              <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">{{item.nombre}} <span class="text-body-secondary"><br>[{{item.productos}} productos]</span></h3>
+              <p class="lead">Palé de {{item.nombre}} sin revisar procedente de Amazon Devoluciones</p>
+              <p>Precio del pale {{item.precio}} €</p>
+              <a  [routerLink]="['/pale-details',item.id]" class="btn btn-primary">Ver contenido</a>
             </div>
           </div>
         </div>

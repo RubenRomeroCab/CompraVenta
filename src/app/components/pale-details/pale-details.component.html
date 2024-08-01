@@ -1,25 +1,25 @@
 <div class="container bg-body-tertiary ">
     <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1 text-center mb-3">Palé de Electrodomésticos <span class="text-body-secondary"><br><br>
-                    [31 productos]</span></h2>
-            <p class="lead">Palé de Electrodomésticos sin revisar procedente de Amazon Devoluciones</p>
+        <div *ngIf="pale" class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1 text-center mb-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
+                    [ Cantidad de productos {{ pale.productos}} ]</span></h2>
+            <p class="lead">Palé de {{pale.nombre}} sin revisar procedente de Amazon Devoluciones</p>
             <ul class="list-unstyled">
                 <li>
-                    <p>Cantidad de productos: 31</p>
+                    <p>Cantidad de productos: {{pale.productos}}</p>
                 </li>
                 <li>
-                    <p>Valor total: 3.152 €</p>
+                    <p>Valor total: {{pale.precio}}€</p>
                 </li>
                 <li>
-                    <p>Precio total: valor de lote + IVA (21%)</p>
+                    <p>Precio total: {{pale.precio}} + Iva de 21%  <br> Total:  {{pale.precio +(pale.precio * (0.21 /100)) }}</p>
+                   
                 </li>
                 <li>
                     <p>Tiempo de entrega estimado: 3 a 7 días</p>
                 </li>
             </ul>
-            <h3 class="text-center mt-5" >790,00 €</h3>
-            <p class="text-center">Disponibilidad: 1 disponible</p>
+            <h3 class="text-center mt-5" > Precio total : {{pale.precio +(pale.precio * (0.21 /100)) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
             <button class="btn btn-primary ">Añadir al carrito</button>
             </div>
@@ -30,41 +30,16 @@
                 <title>Placeholder</title>
         </div>
     </div>
-
-  
-
-
       <h2 class="text-center mt-5">Descripción y valor del producto</h2>
-    <li class="list-unstyled text-center" >
-        <ul>
+      <div *ngIf="pale">
+    <li *ngFor="let item of pale.items" class="list-unstyled text-center" >
+        <ul >
             <p>
-                <a target="_blank" href="https://www.amazon.es/WYBOT-Automatico-LED-Indicador-Filtraci%C3%B3n-Doblemente/dp/B0D1QW5GCG/?_encoding=UTF8&pd_rd_w=TPw24&content-id=amzn1.sym.0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_p=0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_r=5H414SCGY5EET9V05WGE&pd_rd_wg=xe3Pf&pd_rd_r=801586ff-96cd-46dd-b06d-4ee9e5f99cb8&ref_=pd_hp_d_atf_unk&th=1">WYBOT Robot Piscina Automatico 120 Minutos de Limpieza, 2,5-h Carga Rápida LED-Indicador Robot Piscina Automatico con Filtración Doblemente</a> - 229,99€
+                <a target="_blank" [href]="'https://www.amazon.es/dp/'+item.ASIN"   >{{item.ItemDesc}}</a> {{item.TOTALCOST}} -- {{item.SUBCATEGORY}}
             </p><hr>
         </ul>
-        <ul>
-            <p>
-                <a href="https://www.amazon.es/dp/B0BRWQJ97W/ref=sbl_dpx_es-outdoor-pool-cleaners_B0D1QW5GCG_0">WYBOT Robot Limpiados Piscina Inalambrico, Funciona 100 Mins hasta 80m², Fuerte Potencia de Succión, Aspirador de Piscina Autoaparcamiento</a>  - 144,99€
-            </p><hr>
-        </ul>
-        <ul>
-            <p>
-                <a target="_blank" href="https://www.amazon.es/WYBOT-Automatico-LED-Indicador-Filtraci%C3%B3n-Doblemente/dp/B0D1QW5GCG/?_encoding=UTF8&pd_rd_w=TPw24&content-id=amzn1.sym.0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_p=0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_r=5H414SCGY5EET9V05WGE&pd_rd_wg=xe3Pf&pd_rd_r=801586ff-96cd-46dd-b06d-4ee9e5f99cb8&ref_=pd_hp_d_atf_unk&th=1">WYBOT Robot Piscina Automatico 120 Minutos de Limpieza, 2,5-h Carga Rápida LED-Indicador Robot Piscina Automatico con Filtración Doblemente</a> - 229,99€
-            </p><hr>
-        </ul>
-        <ul>
-            <p>
-                <a target="_blank" href="https://www.amazon.es/WYBOT-Automatico-LED-Indicador-Filtraci%C3%B3n-Doblemente/dp/B0D1QW5GCG/?_encoding=UTF8&pd_rd_w=TPw24&content-id=amzn1.sym.0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_p=0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_r=5H414SCGY5EET9V05WGE&pd_rd_wg=xe3Pf&pd_rd_r=801586ff-96cd-46dd-b06d-4ee9e5f99cb8&ref_=pd_hp_d_atf_unk&th=1">WYBOT Robot Piscina Automatico 120 Minutos de Limpieza, 2,5-h Carga Rápida LED-Indicador Robot Piscina Automatico con Filtración Doblemente</a> - 229,99€
-            </p><hr>
-        </ul>
-        <ul>
-            <p>
-                <a target="_blank" href="https://www.amazon.es/WYBOT-Automatico-LED-Indicador-Filtraci%C3%B3n-Doblemente/dp/B0D1QW5GCG/?_encoding=UTF8&pd_rd_w=TPw24&content-id=amzn1.sym.0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_p=0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_r=5H414SCGY5EET9V05WGE&pd_rd_wg=xe3Pf&pd_rd_r=801586ff-96cd-46dd-b06d-4ee9e5f99cb8&ref_=pd_hp_d_atf_unk&th=1">WYBOT Robot Piscina Automatico 120 Minutos de Limpieza, 2,5-h Carga Rápida LED-Indicador Robot Piscina Automatico con Filtración Doblemente</a> - 229,99€
-            </p><hr>
-        </ul>
-        <ul>
-            <p class="mb-5">
-                <a target="_blank" href="https://www.amazon.es/WYBOT-Automatico-LED-Indicador-Filtraci%C3%B3n-Doblemente/dp/B0D1QW5GCG/?_encoding=UTF8&pd_rd_w=TPw24&content-id=amzn1.sym.0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_p=0a1e4d50-7b96-465b-86c1-adb7e525fae2&pf_rd_r=5H414SCGY5EET9V05WGE&pd_rd_wg=xe3Pf&pd_rd_r=801586ff-96cd-46dd-b06d-4ee9e5f99cb8&ref_=pd_hp_d_atf_unk&th=1">WYBOT Robot Piscina Automatico 120 Minutos de Limpieza, 2,5-h Carga Rápida LED-Indicador Robot Piscina Automatico con Filtración Doblemente</a> - 229,99€
-            </p><hr>
-        </ul>
+
     </li>
+</div>
+
 </div>

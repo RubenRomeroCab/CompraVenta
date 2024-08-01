@@ -18,6 +18,7 @@ export class BodyComponent {
 
   paleId = pales[0].id
   paless: Array<Pale> = pales
+  
   constructor( private router:Router) {
   console.log(pales)
   }
