@@ -1,34 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { pales } from '../../models/pales';
+import { Pale } from '../../models/pale.model';
+
 
 
 @Component({
   selector: 'app-body',
   standalone: true,
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
 
-  pale: any;
-  constructor(){
-    this.pale ={
-      id:1,
-      nombre: 'Palé de Electrodomésticos',
-      productos: 23,
-      precio: 5000,
-      items:[]
-    }
+
+  paleId = pales[0].id
+  paless: Array<Pale> = pales
+  constructor( private router:Router) {
+  console.log(pales)
   }
 
-  verId(){
-    console.log( 'este es el id del pale' + this.pale.id )
+  verPale(id:number) {
+
+  console.log(id)
+    this.router.navigate(['/pale-details',id])
   }
-
-
-   
- 
-
+  
 }

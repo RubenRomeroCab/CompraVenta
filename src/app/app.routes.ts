@@ -13,7 +13,7 @@ export const routes: Routes = [
     {path: '', redirectTo: '/body', pathMatch: 'full' },
     {path:'home',component:HomeComponent},
     {path:'body',component:BodyComponent},
-    {path:'pale-details',component:PaleDetailsComponent},
+    {path:'pale-details/:id ',component:PaleDetailsComponent},
     {path:'about',component:AboutComponent},
     {path:'contacto',component:ContactoComponent},
     {path:'politicas-envio',component:PoliticasEnvioComponent},
