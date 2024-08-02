@@ -40,6 +40,9 @@ export class CarritoDetailsComponent implements OnInit{
       this.pale.splice(index, 1);
     }
     this.precioFinalCompra()
+    this.carritoService.eliminarPale(idPale)
+    
+
 }
   verPale(id:number){
    this.route.navigate(['/pale-details',id])

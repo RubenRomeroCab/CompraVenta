@@ -12,32 +12,30 @@ import { Subscription } from 'rxjs';
   styleUrl: './nav.component.css'
 })
 export class NavComponent implements OnInit {
-  nuevoCarrito: Pale [] = []
   precioTotalConIVA: number = 0;
-  private precioTotalSubscription!: Subscription;
+  private palesSubscription!: Subscription;
 
   constructor(private carritoService: PaleService, private router: Router) {}
 
   ngOnInit(): void {
-    this.precioTotalSubscription = this.carritoService.precioTotal$.subscribe(precioTotal => {
+    this.palesSubscription = this.carritoService.precioTotal$.subscribe(precioTotal => {
       this.calcularPrecioTotal(precioTotal);
     });
   }
 
   ngOnDestroy(): void {
-    if (this.precioTotalSubscription) {
-      this.precioTotalSubscription.unsubscribe();
+    if (this.palesSubscription) {
+      this.palesSubscription.unsubscribe();
     }
   }
 
   calcularPrecioTotal(precioTotal: number): void {
-    if(precioTotal>0){
-      const iva = 0.21; // 21%
-    this.precioTotalConIVA = precioTotal + (precioTotal * iva);
-    }else{
-      precioTotal=0
+    const iva = 0.21; // 21%
+    if (precioTotal > 0) {
+      this.precioTotalConIVA = precioTotal + (precioTotal * iva);
+    } else {
+      this.precioTotalConIVA = 0;
     }
-    
   }
 
   verCarrito() {
