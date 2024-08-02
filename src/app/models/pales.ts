@@ -5,7 +5,7 @@ export const pales: Array<Pale> = [
   {
     destacado:true,
     id: 1,
-    nombre: 'Palé de Electrodomésticos',
+    nombre: 'Palé de Teles',
     productos: 23,
     precio: 2000 ,
     items: [
@@ -49,9 +49,9 @@ export const pales: Array<Pale> = [
   {
     destacado:true,
     id: 2,
-    nombre: 'Palé de Electrodomésticos',
+    nombre: 'Palé de Informatica',
     productos: 23,
-    precio:  5000 ,
+    precio:  3500 ,
     items: [
       {
         DEPARTMENT: "Home Entertainment",
@@ -136,7 +136,7 @@ export const pales: Array<Pale> = [
     id: 4,
     nombre: 'Palé de Cocina',
     productos: 10,
-    precio: 5000,
+    precio: 2640,
     items: [
       {
         DEPARTMENT: "Home Entertainment",

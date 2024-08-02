@@ -1,5 +1,4 @@
 export interface Item {
-  
     DEPARTMENT: string;
     CATEGORY: string;
     SUBCATEGORY: string;
@@ -8,4 +7,4 @@ export interface Item {
     COST: number;
     TOTALRETAIL: number;
     TOTALCOST: number;
-  }
+}

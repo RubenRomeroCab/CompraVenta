@@ -1,4 +1,4 @@
-<div class="container mt-4 rounded-4  bg-body-tertiary ">
+<div class="container mt-4 mb-4 rounded-4  bg-body-tertiary  ">
     <div class="row featurette ">
         <div *ngIf="pale" class="col-md-7 order-md-2">
             <h2 class="featurette-heading fw-normal lh-1 text-center mb-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
@@ -19,13 +19,13 @@
                     <p>Tiempo de entrega estimado: 3 a 7 días</p>
                 </li>
             </ul>
-            <h3 class="text-center mt-5" > Precio total : {{pale.precio +(pale.precio * 0.21) }} € </h3>
+            <h3 class="text-center " > Precio total : {{pale.precio +(pale.precio * 0.21) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
             <button (click)="agregarAlCarrito(pale)"  class="btn btn-primary ">Añadir al carrito</button>
             </div>
         </div>
         <div class="col-md-5 order-md-1">
-            <img  src="pale.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4" width="450"
+            <img  src="pale.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
                 height="500"role="img" >
                 <title>Placeholder</title>
         </div>

@@ -1,5 +1,9 @@
 ul{
+   
     list-style: none;
     margin: 0; /* Elimina el margen predeterminado */
     padding: 0; /* Elimina el padding predeterminado */
+}
+.container{
+    font-size: 18px;
 }

@@ -24,8 +24,6 @@ export class BodyComponent {
   }
 
   verPale(id:number) {
-
-  console.log(id)
     this.router.navigate(['/pale-details',id])
   }
   
