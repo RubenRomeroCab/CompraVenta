@@ -18,12 +18,14 @@ export class NavComponent implements OnInit {
   constructor(private carritoService: PaleService, private router: Router) {}
 
   ngOnInit(): void {
+    // Suscribirse al observable para recibir actualizaciones del precio total
     this.palesSubscription = this.carritoService.precioTotal$.subscribe(precioTotal => {
       this.calcularPrecioTotal(precioTotal);
     });
   }
 
   ngOnDestroy(): void {
+    // Cancelar la suscripción para evitar pérdidas de memoria
     if (this.palesSubscription) {
       this.palesSubscription.unsubscribe();
     }
@@ -31,14 +33,11 @@ export class NavComponent implements OnInit {
 
   calcularPrecioTotal(precioTotal: number): void {
     const iva = 0.21; // 21%
-    if (precioTotal > 0) {
-      this.precioTotalConIVA = precioTotal + (precioTotal * iva);
-    } else {
-      this.precioTotalConIVA = 0;
-    }
+   
   }
 
   verCarrito() {
+    // Navegar a la vista de detalles del carrito
     this.router.navigate(['/carrito-details']);
   }
 }

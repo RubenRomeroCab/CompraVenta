@@ -74,23 +74,20 @@ checkoutForm: any;
   precioFinalCompra() {
     // Resetear el precioFinal a cero antes de calcularlo de nuevo
     this.precioFinal = 0;
-
+  
+    // Sumar el precio base de todos los palés
     for (let i = 0; i < this.pale.length; i++) {
-      // Asegúrate de que pale[i].precio es un número
+      // Asegúrate de que pale[i].precio es un número y suma el precio base
       this.precioFinal += Number(this.pale[i].precio) || 0;
     }
   }
 
   calcularTotalConIVA(): number {
-    const iva = 0.21;
-    this.cantidadIva = this.precioFinal;
+    const iva = 0.21; // 21%
+    // Sumar el IVA al subtotal
     return this.precioFinal + (this.precioFinal * iva);
   }
-
-
-  calcularDiferencia(): number {
-    return this.cantidadIva - this.precioFinal; // Calcula la diferencia (IVA)
-  }
+  
 
   onSubmit() {
    /*  if (this.checkoutForm.valid) {
