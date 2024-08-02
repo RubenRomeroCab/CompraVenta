@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { PaleService } from '../../services/pale.service';
+import { Pale } from '../../models/pale.model';
 
 @Component({
   selector: 'app-nav',
@@ -8,13 +10,21 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
-  
-  constructor(private router:Router){
-    
-  }
+export class NavComponent implements OnInit {
+  nuevoCarrito: Pale [] = []
+  totalPrice: number = 0;
 
-  verCarrito(){
+  constructor(private router: Router,
+    private serviceCarrito: PaleService) { }
+
+
+
+    ngOnInit() {
+     this.nuevoCarrito= this.serviceCarrito.mostrarcarrtito();
+     
+    }
+
+  verCarrito() {
     this.router.navigate(['/carrito-details'])
   }
 }

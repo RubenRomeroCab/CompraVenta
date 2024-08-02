@@ -7,7 +7,7 @@ export const pales: Array<Pale> = [
     id: 1,
     nombre: 'Palé de Electrodomésticos',
     productos: 23,
-    precio: 5000,
+    precio: 2000 ,
     items: [
       {
         DEPARTMENT: "Home Entertainment",
@@ -51,7 +51,7 @@ export const pales: Array<Pale> = [
     id: 2,
     nombre: 'Palé de Electrodomésticos',
     productos: 23,
-    precio: 5000,
+    precio:  5000 ,
     items: [
       {
         DEPARTMENT: "Home Entertainment",
@@ -95,7 +95,7 @@ export const pales: Array<Pale> = [
     id: 3,
     nombre: 'Palé de Electrodomésticos',
     productos: 23,
-    precio: 1580,
+    precio: 1580  ,
     items: [
       {
         DEPARTMENT: "Home Entertainment",
@@ -136,7 +136,7 @@ export const pales: Array<Pale> = [
     id: 4,
     nombre: 'Palé de Cocina',
     productos: 10,
-    precio: 4500,
+    precio: 5000,
     items: [
       {
         DEPARTMENT: "Home Entertainment",

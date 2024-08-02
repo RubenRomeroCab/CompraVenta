@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { pales } from '../../models/pales';
 import { Pale } from '../../models/pale.model';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   
   paleDestacado: Pale[] = [];
 
-  constructor(){}
+  constructor(private router:Router){}
   
 
   ngOnInit(): void {
@@ -24,5 +24,13 @@ export class HomeComponent implements OnInit {
     // Verifica los resultados en la consola
     console.log(this.paleDestacado);
   }
+
+  
+  verPale(id:number) {
+
+    console.log(id)
+      this.router.navigate(['/pale-details',id])
+    }
+    
 
 }
