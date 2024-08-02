@@ -7,8 +7,17 @@ import { Pale } from '../models/pale.model';
 })
 export class PaleService {
 
+  private paleSubject = new BehaviorSubject<Pale[]>([]);
+  pale$ = this.paleSubject.asObservable();
 
 
+
+
+
+
+
+
+  //-----------------no tocar--------------------------//
   // Método para añadir un Pale al carrito
   private carrito: Pale[] = [];
   private precioTotalSubject = new BehaviorSubject<number>(-1);
@@ -21,7 +30,7 @@ export class PaleService {
   }
 
    actualizarPrecioTotal() {
-    const precioTotal = this.carrito.reduce((total, pale) => total + pale.precio,-1);
+    const precioTotal = this.carrito.reduce((total, pale) => total + pale.precio,0);
     this.precioTotalSubject.next(precioTotal);
   
   }
