@@ -22,7 +22,7 @@ export class PaleService {
     this.actualizarPrecioTotal();
   }
 
-  private actualizarPrecioTotal() {
+  public actualizarPrecioTotal(): void {
     const precioTotal = this.carrito.reduce((total, pale) => total + pale.precio, 0);
     this.precioTotalSubject.next(precioTotal);
   }

@@ -53,19 +53,20 @@ checkoutForm: any;
 
   borrarPale(event: Event, idPale: number) {
     event.stopPropagation();
-    const index = this.pale.findIndex(pale => pale.id === idPale)
+    const index = this.pale.findIndex(pale => pale.id === idPale);
     if (index !== -1) {
       // Eliminar el objeto usando splice
       this.pale.splice(index, 1);
     }
-
-
-   /*  PREGUNTAR A ALFON MAÑANA SOBRE LA BASURA ESTA
-    this.carritoService.eliminarPale(idPale); */
+  
+    // Llama al servicio para eliminar el Pale
+    this.carritoService.eliminarPale(idPale);
+  
+    // Actualiza el precio final
     this.precioFinalCompra();
-
-
   }
+
+  
   verPale(id: number) {
     this.route.navigate(['/pale-details', id])
     console.log('pale seleccionado')

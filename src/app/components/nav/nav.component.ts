@@ -20,11 +20,19 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     // Suscribirse al observable para recibir actualizaciones del precio total
     this.palesSubscription = this.carritoService.precioTotal$.subscribe(precioTotal => {
+
      this.precioTotalConIVA = precioTotal
+    
+      
     });
   }
 
-  
+  ngOnDestroy(): void {
+    // Cancelar la suscripción cuando el componente se destruya
+    if (this.palesSubscription) {
+      this.palesSubscription.unsubscribe();
+    }
+  }
 
  
 
