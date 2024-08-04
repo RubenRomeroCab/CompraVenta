@@ -20,21 +20,13 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     // Suscribirse al observable para recibir actualizaciones del precio total
     this.palesSubscription = this.carritoService.precioTotal$.subscribe(precioTotal => {
-      this.calcularPrecioTotal(precioTotal);
+     this.precioTotalConIVA = precioTotal
     });
   }
 
-  ngOnDestroy(): void {
-    // Cancelar la suscripción para evitar pérdidas de memoria
-    if (this.palesSubscription) {
-      this.palesSubscription.unsubscribe();
-    }
-  }
+  
 
-  calcularPrecioTotal(precioTotal: number): void {
-    const iva = 0.21; // 21%
-   
-  }
+ 
 
   verCarrito() {
     // Navegar a la vista de detalles del carrito
