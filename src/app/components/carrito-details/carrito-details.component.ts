@@ -27,6 +27,7 @@ export class CarritoDetailsComponent implements OnInit {
   cantidadIva: number = 0;
   checkoutForm: any;
   elementoEliminado!:boolean ;
+  paleSelecionado !:number;
   constructor(private carritoService: PaleService,
     private route: Router,
     private fb: FormBuilder,
@@ -90,6 +91,7 @@ export class CarritoDetailsComponent implements OnInit {
   verPale(id: number) {
     this.route.navigate(['/pale-details', id])
     console.log('pale seleccionado')
+    this.paleSelecionado = id;
   }
 
   precioFinalCompra() {

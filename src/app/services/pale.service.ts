@@ -14,11 +14,13 @@ export class PaleService {
 
   private alertaSubject = new Subject<string>(); // Añadir Subject para alertas
   alerta$ = this.alertaSubject.asObservable(); // Observable para suscribirse a las alertas
+ 
 
 
   private carritoSubject = new BehaviorSubject<Pale[]>(this.carrito);
   carrito$ = this.carritoSubject.asObservable();
 
+  private elementoEliminado$ = new BehaviorSubject<number | null>(null);
 
   actualizarPrecioTotalConIVA(nuevoTotal: number) {
     this.precioTotalConIVA$.next(nuevoTotal);
