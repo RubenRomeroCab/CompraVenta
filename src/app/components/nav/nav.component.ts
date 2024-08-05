@@ -13,31 +13,32 @@ import { Subscription } from 'rxjs';
 })
 export class NavComponent implements OnInit {
   precioTotalConIVA: number = 0;
-  private palesSubscription!: Subscription;
+ 
+     pale !:Pale [] 
 
   constructor(private carritoService: PaleService, private router: Router) {}
 
   ngOnInit(): void {
-    // Suscribirse al observable para recibir actualizaciones del precio total
-    this.palesSubscription = this.carritoService.precioTotal$.subscribe(precioTotal => {
 
-     this.precioTotalConIVA = precioTotal
-    
+    // Suscripción al Observable del precio total con IVA
+    this.carritoService.getPrecioTotalConIVA$().subscribe({
+      next: (totalConIVA ) => {
+        console.log(totalConIVA)
+        this.precioTotalConIVA = totalConIVA ;
+        
+      },
       
+      error: (err) => console.error('Error al recibir el total con IVA:', err)
     });
+
+   
+
   }
 
-  ngOnDestroy(): void {
-    // Cancelar la suscripción cuando el componente se destruya
-    if (this.palesSubscription) {
-      this.palesSubscription.unsubscribe();
-    }
-  }
-
- 
 
   verCarrito() {
     // Navegar a la vista de detalles del carrito
     this.router.navigate(['/carrito-details']);
   }
 }
+

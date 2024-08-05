@@ -30,7 +30,7 @@ checkoutForm: any;
 
   ngOnInit(): void {
     this.pale = this.carritoService.mostrarcarrtito();
-    console.log(this.pale)
+  
     this.precioFinalCompra()
 
   
