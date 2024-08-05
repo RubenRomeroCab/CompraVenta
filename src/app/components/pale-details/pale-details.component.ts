@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { pales } from '../../models/pales';
 import { CommonModule } from '@angular/common';
 import { PaleService } from '../../services/pale.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pale-details',
@@ -20,9 +21,12 @@ export class PaleDetailsComponent implements OnInit {
   precioTotal!:number;
   precioCarrito!:number;
 
+  private subscription: Subscription = new Subscription();
+  alertMessage: string = '';
+
 
   constructor(private route: ActivatedRoute,
-              private servioPale:PaleService,) {}
+              private servicioPale:PaleService,) {}
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -31,12 +35,19 @@ export class PaleDetailsComponent implements OnInit {
     
     console.log(this.pale);
     console .log (id, idParam)
+
+    this.subscription.add(
+      this.servicioPale.alerta$.subscribe(message => {
+        this.alertMessage = message; // Debe ser un string
+        setTimeout(() => this.alertMessage = '', 5000); // Ocultar alerta después de 3 segundos
+      })
+    );
   }
 
   
   agregarAlCarrito(pale:Pale){
-      this.servioPale.agregarPale(pale)
-      console.log(this.servioPale.mostrarcarrtito())
+      this.servicioPale.agregarPale(pale)
+      console.log(this.servicioPale.mostrarcarrtito())
       
   }
 

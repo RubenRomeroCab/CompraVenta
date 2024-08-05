@@ -5,6 +5,11 @@ import { Pale } from '../../models/pale.model';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StripeService } from '../../servicestripe/servicestripe.service';
+
+
+
+
 
 @Component({
   selector: 'app-carrito-details',
@@ -20,12 +25,17 @@ export class CarritoDetailsComponent implements OnInit {
   precioFinal: number = 0;
   ivaTotal!: number
   cantidadIva: number = 0;
-checkoutForm: any;
+  checkoutForm: any;
+  elementoEliminado!:boolean ;
   constructor(private carritoService: PaleService,
     private route: Router,
     private fb: FormBuilder,
-
+    private stripeService: StripeService,
+  
+    
   ) { }
+
+
 
 
   ngOnInit(): void {
@@ -46,10 +56,15 @@ checkoutForm: any;
         provincia: ['', Validators.required],
         notas: ['']
       });
+
+      
+  
+     
   }
+  
 
 
-
+  
 
   borrarPale(event: Event, idPale: number) {
     event.stopPropagation();
@@ -64,6 +79,11 @@ checkoutForm: any;
   
     // Actualiza el precio final
     this.precioFinalCompra();
+    this.elementoEliminado = true;
+    setTimeout(() => {
+      this.elementoEliminado = false; // Desactiva el mensaje de alerta después de 5 segundos
+    }, 5000); // 5000 milisegundos = 5 segundos
+
   }
 
   
@@ -89,17 +109,4 @@ checkoutForm: any;
     return this.precioFinal + (this.precioFinal * iva);
   }
   
-
-  onSubmit() {
-   /*  if (this.checkoutForm.valid) {
-      this.stripeService.createToken(this.card!).subscribe(result => {
-        if (result.token) {
-          // Aquí es donde puedes enviar el token y la información del formulario a tu servidor
-          this.processPayment(result.token);
-        } else if (result.error) {
-          console.error(result.error.message);
-        }
-      });
-    } */
-  }
 }

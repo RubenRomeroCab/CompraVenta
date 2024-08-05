@@ -28,8 +28,12 @@
                     </tr>
                 </tbody>
             </table>
+   
         </div>
     </div>
+    <div *ngIf="elementoEliminado" class="alert alert-danger"  style="font-size: 1.5rem; border-width: 1px; padding: 0.5rem;">
+      <p class="text-center ">Elemento eliminado</p>
+     </div>
     <div class="mt-4 ">
         <div class="card rounded-3 shadow-sm border-primary">
             <div class="card-header py-3 text-bg-primary border-primary">
@@ -41,7 +45,7 @@
                     <li>Subtotal {{precioFinal}} € (sin impuestos)</li>
                     <li>Total con IVA incluido del 21% {{calcularTotalConIVA()}} €</li>
                 </ul>
-                <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="checkoutForm">
                     <div id="card-element"></div>
                     <div class="form-group">
                       <label for="nombre">Nombre</label>

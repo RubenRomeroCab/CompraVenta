@@ -22,6 +22,7 @@
             <h3 class="text-center " > Precio total : {{pale.precio +(pale.precio * 0.21) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
             <button (click)="agregarAlCarrito(pale)"  class="btn btn-primary ">Añadir al carrito</button>
+         
             </div>
         </div>
         <div class="col-md-5 order-md-1">
@@ -30,6 +31,9 @@
                 <title>Placeholder</title>
         </div>
     </div>
+    <div *ngIf="alertMessage" class="alert alert-info text-center">
+        {{ alertMessage }}
+      </div>
       <h2 class="text-center mt-5">Descripción y valor del producto</h2>
       <div *ngIf="pale">
     <li *ngFor="let item of pale.items" class="list-unstyled text-center " >

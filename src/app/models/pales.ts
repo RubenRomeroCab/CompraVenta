@@ -3,6 +3,7 @@ import { Pale } from "./pale.model";
 export const pales: Array<Pale> = [
 
   {
+    priceId:'4545',
     destacado:true,
     id: 1,
     nombre: 'Palé de Teles',
@@ -10,6 +11,7 @@ export const pales: Array<Pale> = [
     precio: 2000 ,
     items: [
       {
+        
         DEPARTMENT: "Home Entertainment",
         CATEGORY: "Home Theater Projectors",
         SUBCATEGORY: "Home Theater Projectors",
@@ -47,6 +49,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
+    priceId:'48',
     destacado:true,
     id: 2,
     nombre: 'Palé de Informatica',
@@ -91,7 +94,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
-    
+    priceId:'47',
     id: 3,
     nombre: 'Palé de Electrodomésticos',
     productos: 23,
@@ -132,6 +135,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
+    priceId:'46',
     destacado:true,
     id: 4,
     nombre: 'Palé de Cocina',
