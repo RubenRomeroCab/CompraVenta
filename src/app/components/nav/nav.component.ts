@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class NavComponent implements OnInit {
   precioTotalConIVA: number = 0;
  
-     pale !:Pale [] 
+  pale !:Pale [] 
 
   constructor(private carritoService: PaleService, private router: Router) {}
 
@@ -24,17 +24,11 @@ export class NavComponent implements OnInit {
     this.carritoService.getPrecioTotalConIVA$().subscribe({
       next: (totalConIVA ) => {
         console.log(totalConIVA)
-        this.precioTotalConIVA = totalConIVA ;
-        
+        this.precioTotalConIVA =  totalConIVA+(totalConIVA *0.21) ;
       },
-      
       error: (err) => console.error('Error al recibir el total con IVA:', err)
     });
-
-   
-
   }
-
 
   verCarrito() {
     // Navegar a la vista de detalles del carrito

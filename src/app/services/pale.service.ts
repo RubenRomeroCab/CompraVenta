@@ -25,8 +25,17 @@ export class PaleService {
 
   agregarPale(pale: Pale) {
     console.log('carrito actualizado')
-    this.carrito.push(pale);
-    this.actualizarPrecioTotal();
+    if (this.carrito) {
+      // Verificar si ya existe un Pale con el mismo id en el carrito
+      const existePale = this.carrito.some(item => item.id === pale.id);
+      
+      if (!existePale) {
+          this.carrito.push(pale);
+          this.actualizarPrecioTotal();
+      } else {
+          console.log('El Pale con este id ya está en el carrito.');
+      }
+  }
   }
 
   //POSIBLE SULUCION MIRAR ELIMINAR PALE 
