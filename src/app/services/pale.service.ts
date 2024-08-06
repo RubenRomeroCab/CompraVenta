@@ -20,7 +20,7 @@ export class PaleService {
   private carritoSubject = new BehaviorSubject<Pale[]>(this.carrito);
   carrito$ = this.carritoSubject.asObservable();
 
-  private elementoEliminado$ = new BehaviorSubject<number | null>(null);
+ 
 
   actualizarPrecioTotalConIVA(nuevoTotal: number) {
     this.precioTotalConIVA$.next(nuevoTotal);
@@ -65,6 +65,8 @@ export class PaleService {
     this.actualizarPrecioTotal();
   }
 
+  
+
   public actualizarPrecioTotal(): void {
     const precioTotal = this.carrito.reduce((total, pale) => total + pale.precio, 0);
     this.precioTotalConIVA$.next(precioTotal);
@@ -72,6 +74,14 @@ export class PaleService {
 
   mostrarcarrtito() {
     return this.carrito;
+  }
+
+  limpiarCarrito(){
+    let response = 200;
+    if(response == 200){
+      this.carrito.length=0;
+      this.actualizarPrecioTotal()
+    }
   }
   
 }

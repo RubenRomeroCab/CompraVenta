@@ -22,9 +22,9 @@ export class CarritoDetailsComponent implements OnInit {
 
 
   pale !: Pale[]
-  precioFinal: number = 0;
-  ivaTotal!: number
-  cantidadIva: number = 0;
+  precioTotalConIVA: number = 0;
+  
+ 
   checkoutForm: any;
   elementoEliminado!:boolean ;
   paleSelecionado !:number;
@@ -58,6 +58,12 @@ export class CarritoDetailsComponent implements OnInit {
         notas: ['']
       });
 
+      this.carritoService.getPrecioTotalConIVA$().subscribe({
+        next:(totalConIVA)=>{
+          this.precioTotalConIVA = totalConIVA+(totalConIVA *0.21);
+        }
+
+      })
       
   
      
@@ -96,26 +102,27 @@ export class CarritoDetailsComponent implements OnInit {
 
   precioFinalCompra() {
     // Resetear el precioFinal a cero antes de calcularlo de nuevo
-    this.precioFinal = 0;
+    this.precioTotalConIVA = 0;
   
     // Sumar el precio base de todos los palés
     for (let i = 0; i < this.pale.length; i++) {
       // Asegúrate de que pale[i].precio es un número y suma el precio base
-      this.precioFinal += Number(this.pale[i].precio) || 0;
+      this.precioTotalConIVA += Number(this.pale[i].precio) || 0;
     }
+    if(this.pale.length>0){
+     
+    }
+
   }
 
-  calcularTotalConIVA(): number {
-    const iva = 0.21; // 21%
-    // Sumar el IVA al subtotal
-    return this.precioFinal + (this.precioFinal * iva);
-  }
+ 
 
   pagoRealizado(){
 
     for (let i = 0; i < this.pale.length; i++) {
       // Asegúrate de que pale[i].precio es un número y suma el precio base
       this.pale[i].vendido=true;
+      this.carritoService.limpiarCarrito()
       
     }
     console.log(this.pale)
