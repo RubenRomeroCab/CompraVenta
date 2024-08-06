@@ -1,6 +1,7 @@
 import { Item } from "./item.model";
 
 export interface Pale{
+    vendido:boolean;
     priceId:string;
     destacado?:boolean,
     id:number,

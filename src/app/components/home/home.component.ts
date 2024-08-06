@@ -25,9 +25,14 @@ export class HomeComponent implements OnInit {
     console.log(this.paleDestacado);
   }
 
+  mirarPale(pale:Pale){
+    if(!pale.vendido){
+      this.verPale(pale.id)
+    }
+  }
   
   verPale(id:number) {
-
+    
     console.log(id)
       this.router.navigate(['/pale-details',id])
     }

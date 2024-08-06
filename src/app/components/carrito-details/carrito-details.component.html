@@ -61,8 +61,8 @@
           <li>Total con IVA incluido del 21% {{calcularTotalConIVA()}} €</li>
         </ul>
       </div>
-      <div class="d-flex justify-content-center mt-4 mb-3">
-        <a href="https://buy.stripe.com/test_dR64jaejI4ZU5lm000" class="btn btn-primary mx-auto col-lg-8">Realizar el
+      <div class="d-flex justify-content-center mt-4 mb-3"><!-- href="https://buy.stripe.com/test_dR64jaejI4ZU5lm000" --> 
+        <a (click)="pagoRealizado()" class="btn btn-primary mx-auto col-lg-8">Realizar el
           pago</a>
       </div>
     </div>

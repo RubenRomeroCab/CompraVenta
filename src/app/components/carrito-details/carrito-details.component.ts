@@ -110,5 +110,15 @@ export class CarritoDetailsComponent implements OnInit {
     // Sumar el IVA al subtotal
     return this.precioFinal + (this.precioFinal * iva);
   }
+
+  pagoRealizado(){
+
+    for (let i = 0; i < this.pale.length; i++) {
+      // Asegúrate de que pale[i].precio es un número y suma el precio base
+      this.pale[i].vendido=true;
+      
+    }
+    console.log(this.pale)
+  }
   
 }

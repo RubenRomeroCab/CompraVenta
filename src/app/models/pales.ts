@@ -3,6 +3,7 @@ import { Pale } from "./pale.model";
 export const pales: Array<Pale> = [
 
   {
+    vendido:false,
     priceId:'4545',
     destacado:true,
     id: 1,
@@ -49,6 +50,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
+    vendido:false,
     priceId:'48',
     destacado:true,
     id: 2,
@@ -94,6 +96,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
+    vendido:false,
     priceId:'47',
     id: 3,
     nombre: 'Palé de Electrodomésticos',
@@ -135,6 +138,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
+    vendido:false,
     priceId:'46',
     destacado:true,
     id: 4,
