@@ -65,7 +65,7 @@ export class PaleService {
     this.actualizarPrecioTotal();
   }
 
-  
+
 
   public actualizarPrecioTotal(): void {
     const precioTotal = this.carrito.reduce((total, pale) => total + pale.precio, 0);
@@ -77,11 +77,14 @@ export class PaleService {
   }
 
   limpiarCarrito(){
-    let response = 200;
+    let response =200;
     if(response == 200){
       this.carrito.length=0;
       this.actualizarPrecioTotal()
+    }else{
+      
     }
+
   }
   
 }

@@ -20,7 +20,13 @@ export class BodyComponent {
   paless: Array<Pale> = pales
   
   constructor( private router:Router) {
-  console.log(pales)
+  console.log(  pales)
+  }
+  
+  mirarPale(pale:Pale){
+    if(!pale.vendido){
+      this.verPale(pale.id)
+    }
   }
 
   verPale(id:number) {

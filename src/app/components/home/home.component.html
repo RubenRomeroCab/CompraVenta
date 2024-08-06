@@ -1,6 +1,6 @@
 <div class="container">
   
-    <div class="mt-1 text-center bg-body-tertiary rounded-4">
+    <div class="mt-1 text-center  rounded-4 bg">
       
       
       <h1 class="text-body-emphasis mt-3">¡Bienvenido a PaletDirecto!</h1>
@@ -27,14 +27,19 @@
       </div><br><br><br>
       
     </div><br>
-    </div>
+  
     <h3 class="text-center">Productos destacados</h3>
     <div class="container text-center">
       <div class="row">
         <div  *ngFor="let item of paleDestacado"  class="col-lg-4 col-md-6 mb-4 ">
           <div *ngIf="paleDestacado" (click)="mirarPale(item)" class="card  " >
-            <img src="pale.jpg" class="card-img-top" alt="...">
-            <div class="card-body " >
+            <img 
+            [src]="item.vendido ? 'vendido.png' : 'pale.jpg'"
+            data-holder-rendered="true"
+            style="height: 300px; width: 100%; display: block;"
+            alt="Imagen del pale">
+  
+            <div class="card-body bg " >
               <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">{{item.nombre}} <span class="text-body-secondary"><br>[{{item.productos}} productos]</span></h3>
               <p class="lead">Palé de {{item.nombre}} sin revisar procedente de Amazon Devoluciones</p>
               <p>Precio del pale {{item.precio}} €</p>
@@ -56,11 +61,11 @@
       </div>
     </div>
 
-    <div class="container text-center bg-body-tertiary rounded-4">
+    <div class=" text-center mt-4 mb-5 bg rounded-4">
 
-      <h2 class="m-4  text-body">Hacemos envíos de productos de devoluciones de Amazon España sin revisar en el estado original en que los usuarios las realizan y las comercializamos a un coste muy bajo, <code>hasta un 80% más baratas que su valor original en Amazon.</code> </h2>
+      <h2 class=" p-5 text-body">Hacemos envíos de productos de devoluciones de Amazon España sin revisar en el estado original en que los usuarios las realizan y las comercializamos a un coste muy bajo, <code>hasta un 80% más baratas que su valor original en Amazon.</code> </h2>
 
-     <div class="row featurette mt-5 mb-5">
+     <div class="row featurette ">
       <div class="col-md-7 order-md-2">
         
         <h2 class="featurette-heading">¡Descubre un mundo de oportunidades! <span class="text-muted">Al suscribirte</span></h2>
@@ -79,4 +84,5 @@
       </div>
     </div>
 
-    </div>
+    </div>  
+  </div>

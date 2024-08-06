@@ -122,10 +122,13 @@ export class CarritoDetailsComponent implements OnInit {
     for (let i = 0; i < this.pale.length; i++) {
       // Asegúrate de que pale[i].precio es un número y suma el precio base
       this.pale[i].vendido=true;
-      this.carritoService.limpiarCarrito()
+      
       
     }
-    console.log(this.pale)
+    
+    this.carritoService.limpiarCarrito()
+    
+    
   }
   
 }
