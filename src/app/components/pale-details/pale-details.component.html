@@ -25,15 +25,16 @@
          
             </div>
         </div>
+        <div *ngIf="alertMessage" class="alert alert-info text-center">
+            {{ alertMessage }}
+          </div>
         <div class="col-md-5 order-md-1">
             <img  src="pale.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
                 height="500"role="img" >
                 <title>Placeholder</title>
         </div>
     </div>
-    <div *ngIf="alertMessage" class="alert alert-info text-center">
-        {{ alertMessage }}
-      </div>
+    
       <h2 class="text-center mt-5">Descripción y valor del producto</h2>
       <div *ngIf="pale">
     <li *ngFor="let item of pale.items" class="list-unstyled text-center " >

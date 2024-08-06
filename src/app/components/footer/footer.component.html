@@ -1,9 +1,39 @@
 <footer class="text-body-secondary py-2 bg-body-tertiary">
   <div class="container">
-    <p class="float-end ">
-      <a href="#">Back to top</a>
+    <p class="float-end">
+      <a [routerLink]="['/inicio']" routerLinkActive="router-link-active">Volver arriba</a>
     </p>
-    <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
+
+    <p class="mb-2">
+      © {{ ayoActual }} Todos los derechos reservados.
+    </p>
+
+    <p class="mb-1">
+      <a [routerLink]="['/politica-de-privacidad']" routerLinkActive="router-link-active">Política de Privacidad</a> |
+      <a [routerLink]="['/terminos-de-servicio']" routerLinkActive="router-link-active">Términos de Servicio</a>
+    </p>
+
+    <p class="mb-1">
+      Si tienes alguna pregunta o necesitas soporte, por favor <a [routerLink]="['/contacto']" routerLinkActive="router-link-active">contáctanos</a>. Estamos aquí para ayudarte con cualquier problema o consulta que puedas tener.
+    </p>
+
+    <p class="mb-0">
+      ¿Eres nuevo en nuestro sitio? <a href="/">Visita nuestra página principal</a> o lee nuestra <a href="/docs/5.3/getting-started/introduction/">guía de inicio</a> para aprender más sobre cómo utilizar nuestro sitio y explorar todo lo que ofrecemos.
+    </p>
+    
+    <p class="mb-2">
+      Síguenos en redes sociales para estar al tanto de nuestras últimas noticias y ofertas:
+    </p>
+    <div class="d-flex justify-content-center mt-4 mb-4">
+      <a href="https://instagram.com/tuperfil" target="_blank" rel="noopener noreferrer">
+        <img src="insta30.png" alt="Instagram" class="me-5" width="25" height="25">
+      </a>
+      <a href="https://youtube.com/tu-canal" target="_blank" rel="noopener noreferrer">
+        <img src="youtube.png" alt="YouTube" class="me-5" width="25" height="25">
+      </a>
+      <a href="https://wa.me/tuNumeroDeTelefono" target="_blank" rel="noopener noreferrer">
+        <img src="waa.png" alt="WhatsApp" class="me-5" width="25" height="25">
+      </a>
+    </div>
   </div>
 </footer>
