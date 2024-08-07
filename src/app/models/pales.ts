@@ -90,12 +90,10 @@ export const pales: Array<Pale> = [
         TOTALRETAIL: 1044.5,
         TOTALCOST: 835.6
       },
-
-
-
     ]
   },
   {
+    destacado:true,
     vendido:false,
     priceId:'47',
     id: 3,

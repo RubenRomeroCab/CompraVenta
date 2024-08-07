@@ -22,9 +22,7 @@ export class PaleService {
 
  
 
-  actualizarPrecioTotalConIVA(nuevoTotal: number) {
-    this.precioTotalConIVA$.next(nuevoTotal);
-  }
+ 
 
   getPrecioTotalConIVA$() {
     return this.precioTotalConIVA$.asObservable();
@@ -40,13 +38,11 @@ export class PaleService {
       
       if (!existePale) {
           this.carrito.push(pale);
-          this.carritoSubject.next(this.carrito),
-        
           this.alertaSubject.next('El artículo ha sido añadido al carrito.'); // Mensaje de éxito
           this.actualizarPrecioTotal();
       } else {
         this.alertaSubject.next('Este artículo ya está en el carrito. Solo puedes añadir uno.');
-        console.log('El Pale con este id ya está en el carrito.');
+      
       }
   }
   }
