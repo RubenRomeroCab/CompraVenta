@@ -18,7 +18,7 @@
           <p class="lead">Palé de {{item.nombre}} sin revisar procedente de Amazon Devoluciones</p>
           <div class="d-flex justify-content-center">
           <a 
-          [routerLink]="item.vendido ? null : ['/pale-details', item.id]"
+          [href]="item.vendido ? null : ['/pale-details', item.id]"
           class="btn"
           [ngClass]="{
             'btn-primary': !item.vendido,
