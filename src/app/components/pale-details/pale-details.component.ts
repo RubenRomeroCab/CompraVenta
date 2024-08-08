@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Cuadro} from '../../models/cuadro.model';
+import { Pale } from '../../models/pale.model';
 import { ActivatedRoute } from '@angular/router';
-import { cuadros } from '../../models/cuadros';
+import { pales } from '../../models/pales';
 import { CommonModule } from '@angular/common';
 import { PaleService } from '../../services/pale.service';
 import { Subscription } from 'rxjs';
@@ -17,7 +17,7 @@ import { Subscription } from 'rxjs';
 export class PaleDetailsComponent implements OnInit {
 
 
-  cuadro!: Cuadro| undefined;
+  pale!: Pale | undefined;
   precioTotal!:number;
   precioCarrito!:number;
 
@@ -31,9 +31,9 @@ export class PaleDetailsComponent implements OnInit {
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
     const id = Number(idParam );
-    this.cuadro = cuadros.find((cuadro) => cuadro.id ===id);
+    this.pale = pales.find((p) => p.id ===id);
     
-   
+    console.log(this.pale);
     console .log (id, idParam)
 
     this.subscription.add(
@@ -45,8 +45,8 @@ export class PaleDetailsComponent implements OnInit {
   }
 
   
-  agregarAlCarrito(cuadro:Cuadro){
-      this.servicioPale.agregarPale(cuadro)
+  agregarAlCarrito(pale:Pale){
+      this.servicioPale.agregarPale(pale)
       console.log(this.servicioPale.mostrarcarrtito())
       
   }
