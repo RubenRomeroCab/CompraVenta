@@ -19,6 +19,7 @@ export const routes: Routes = [
     {path:'politicas-envio',component:PoliticasEnvioComponent},
     {path:'carrito-details',component:CarritoDetailsComponent},
     {path:'subcribe',component:SubscribeComponent},
-    {path:'carrito-end',component:CarritoEndComponent}
+    {path:'carrito-end',component:CarritoEndComponent},
+    { path: '**', component:HomeComponent },
    
 ];
