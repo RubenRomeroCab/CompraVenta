@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { pales } from '../../models/pales';
-import { Pale } from '../../models/pale.model';
+import { Cuadro } from '../../models/cuadro.model';
 import { CommonModule } from '@angular/common';
+import { cuadros } from '../../models/cuadros';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,22 +12,22 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   
-  paleDestacado: Pale[] = [];
+  cuadroDestacado: Cuadro[] = [];
 
   constructor(private router:Router){}
   
 
   ngOnInit(): void {
     // Utilizar filter para obtener un array de pales destacados
-    this.paleDestacado = pales.filter(pale => pale.destacado === true);
+    this.cuadroDestacado = cuadros.filter(cuadros => cuadros.destacado === true);
     
     // Verifica los resultados en la consola
-    console.log(this.paleDestacado);
+    console.log(this.cuadroDestacado);
   }
 
-  mirarPale(pale:Pale){
-    if(!pale.vendido){
-      this.verPale(pale.id)
+  mirarPale(cuadro:Cuadro){
+    if(!cuadro.vendido){
+      this.verPale(cuadro.id)
     }
   }
   

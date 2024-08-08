@@ -1,6 +1,6 @@
 <div class="container">
     <div class="mt-1 text-center  rounded-4 bg">
-      <h1 class="text-body-emphasis mt-3">¡Bienvenido a PaletDirecto!</h1>
+      <h1 class="text-body-emphasis mt-3">¡Bienvenido a Smael.Store!</h1>
  <!--      <div class="d-lg-inline mt-4 mb-4 ">
         <img src="insta30.png" alt="" class="me-3">
         <img src="youtube.png" alt="" class="me-3">
@@ -28,10 +28,10 @@
 
       <div class="row">
         
-        <div  *ngFor="let item of paleDestacado"  class="col-lg-4 col-md-6 mb-4 ">
-          <div *ngIf="paleDestacado" (click)="mirarPale(item)" class="card bg " >
+        <div  *ngFor="let item of cuadroDestacado"  class="col-lg-4 col-md-6 mb-4 ">
+          <div *ngIf="cuadroDestacado" (click)="mirarPale(item)" class="card bg " >
             <img 
-            [src]="item.vendido ? 'vendido.png' : 'pale.jpg'"
+            [src]="item.img"
             data-holder-rendered="true"
             style="height: 300px; width: 100%; display: block;"
             alt="Imagen del pale">
