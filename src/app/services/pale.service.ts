@@ -20,15 +20,10 @@ export class PaleService {
   private carritoSubject = new BehaviorSubject<Pale[]>(this.carrito);
   carrito$ = this.carritoSubject.asObservable();
 
- 
-
- 
 
   getPrecioTotalConIVA$() {
     return this.precioTotalConIVA$.asObservable();
   }
-
-
 
   agregarPale(pale: Pale) {
     console.log('carrito actualizado')
@@ -48,7 +43,6 @@ export class PaleService {
   }
 
   //POSIBLE SULUCION MIRAR ELIMINAR PALE 
-
   eliminarPale(paleId: number) {
     console.log('Intentando eliminar pale con id:', paleId);
     console.log('Carrito antes de eliminar:', this.carrito.map(p => p.id));
@@ -60,7 +54,6 @@ export class PaleService {
   
     this.actualizarPrecioTotal();
   }
-
 
 
   public actualizarPrecioTotal(): void {
