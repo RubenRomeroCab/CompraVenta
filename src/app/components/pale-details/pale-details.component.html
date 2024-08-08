@@ -1,45 +1,51 @@
 <div class="container mt-4 mb-4 rounded-4  bg ">
     <div class="row featurette ">
-        <div *ngIf="cuadro" class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1 text-center mb-3">{{cuadro.nombre}} <span class="text-body-secondary"><br><br>
-                    [ Cantidad de productos {{ cuadro.productos}} ]</span></h2>
-        
+        <div *ngIf="pale" class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1 text-center mb-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
+                    [ Cantidad de productos {{ pale.productos}} ]</span></h2>
+            <p class="lead">Palé de {{pale.nombre}} sin revisar procedente de Amazon Devoluciones</p>
             <ul class="list-unstyled">
                 <li>
-                    <p>Cantidad de productos: {{cuadro.productos}}</p>
+                    <p>Cantidad de productos: {{pale.productos}}</p>
                 </li>
                 <li>
-                    <p>Valor total: {{cuadro.precio}}€</p>
+                    <p>Valor total: {{pale.precio}}€</p>
                 </li>
                 <li>
-                    <p>Precio total: {{cuadro.precio}} + Iva de 21%  <br> Total:  {{cuadro.precio +(cuadro.precio * 0.21) }} €</p>
+                    <p>Precio total: {{pale.precio}} + Iva de 21%  <br> Total:  {{pale.precio +(pale.precio * 0.21) }} €</p>
                    
                 </li>
                 <li>
                     <p>Tiempo de entrega estimado: 3 a 7 días</p>
                 </li>
             </ul>
-            <h3 class="text-center " > Precio total : {{cuadro.precio +(cuadro.precio * 0.21) }} € </h3>
+            <h3 class="text-center " > Precio total : {{pale.precio +(pale.precio * 0.21) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
-            <button (click)="agregarAlCarrito(cuadro)"  class="btn btn-primary ">Añadir al carrito</button>
-
-            
+            <button (click)="agregarAlCarrito(pale)"  class="btn btn-primary ">Añadir al carrito</button>
          
             </div>
-
-            
         </div>
         <div *ngIf="alertMessage" class="alert alert-info text-center">
             {{ alertMessage }}
           </div>
         <div class="col-md-5 order-md-1">
-            <img  [src]="cuadro?.img" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
+            <img  src="pale.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
                 height="500"role="img" >
                 <title>Placeholder</title>
         </div>
     </div>
     
       <h2 class="text-center mt-5">Descripción y valor del producto</h2>
-   
+      <div *ngIf="pale">
+    <li *ngFor="let item of pale.items" class="list-unstyled text-center " >
+        <ul >
+            <p>
+                <a target="_blank" [href]="'https://www.amazon.es/dp/'+item.ASIN"   >{{item.ItemDesc}}</a> <br> 
+                {{item.TOTALCOST}} €  -- {{item.SUBCATEGORY}}
+            </p><hr>
+        </ul>
+
+    </li>
+</div>
 
 </div>

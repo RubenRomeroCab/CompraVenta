@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router, RouterLink } from '@angular/router';
 import { PaleService } from '../../services/pale.service';
-import { Cuadro } from '../../models/cuadro.model';
+import { Pale } from '../../models/pale.model';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ import { StripeService } from '../../servicestripe/servicestripe.service';
 export class CarritoDetailsComponent implements OnInit {
 
 
-  pale !: Cuadro[]
+  pale !: Pale[]
   precioTotalConIVA: number = 0;
   
  

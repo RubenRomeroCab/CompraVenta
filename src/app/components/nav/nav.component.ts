@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { PaleService } from '../../services/pale.service';
-import { Cuadro} from '../../models/cuadro.model';
+import { Pale } from '../../models/pale.model';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class NavComponent implements OnInit {
   precioTotalConIVA: number = 0;
  
-  cuadro !:Cuadro [] 
+  pale !:Pale [] 
 
   constructor(private carritoService: PaleService, private router: Router) {}
 

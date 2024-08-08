@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { Cuadro } from '../models/cuadro.model';
+import { Pale } from '../models/pale.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { Cuadro } from '../models/cuadro.model';
 export class PaleService {
 
  
-  private carrito: Cuadro[] = [];
+  private carrito: Pale[] = [];
   private precioTotalConIVA$ = new BehaviorSubject<number>(0);
 
 
@@ -17,7 +17,7 @@ export class PaleService {
  
 
 
-  private carritoSubject = new BehaviorSubject<Cuadro[]>(this.carrito);
+  private carritoSubject = new BehaviorSubject<Pale[]>(this.carrito);
   carrito$ = this.carritoSubject.asObservable();
 
 
@@ -25,14 +25,14 @@ export class PaleService {
     return this.precioTotalConIVA$.asObservable();
   }
 
-  agregarPale(cuadro: Cuadro) {
+  agregarPale(pale: Pale) {
     console.log('carrito actualizado')
     if (this.carrito) {
       // Verificar si ya existe un Pale con el mismo id en el carrito
-      const existePale = this.carrito.some(item => item.id === cuadro.id);
+      const existePale = this.carrito.some(item => item.id === pale.id);
       
       if (!existePale) {
-          this.carrito.push(cuadro);
+          this.carrito.push(pale);
           this.alertaSubject.next('El artículo ha sido añadido al carrito.'); // Mensaje de éxito
           this.actualizarPrecioTotal();
       } else {
