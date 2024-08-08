@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { pales } from '../../models/pales';
-import { Pale } from '../../models/pale.model';
+import { Cuadro } from '../../models/cuadro.model';
+import { cuadros } from '../../models/cuadros';
 
 
 
@@ -16,16 +16,16 @@ import { Pale } from '../../models/pale.model';
 export class BodyComponent {
 
 
-  paleId = pales[0].id
-  paless: Array<Pale> = pales
+  paleId = cuadros[0].id
+  paless: Array<Cuadro> = cuadros
   
   constructor( private router:Router) {
-  console.log(  pales)
+  console.log(  cuadros)
   }
   
-  mirarPale(pale:Pale){
-    if(!pale.vendido){
-      this.verPale(pale.id)
+  mirarPale(cuadro:Cuadro){
+    if(!cuadro.vendido){
+      this.verPale(cuadro.id)
     }
   }
 
