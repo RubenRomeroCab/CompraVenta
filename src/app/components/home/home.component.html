@@ -11,7 +11,6 @@
        nos especializamos en la venta de palets de devoluciones de Amazon, ofreciéndote una oportunidad única de adquirir mercancías de
         calidad a <code>precios significativamente reducidos.</code> 
     </p>
-
     <div class="d-inline-flex gap-2 mb-4 mt-4">
       <button [routerLink]="['/body']" routerLinkActive="router-link-active"  class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
        Ver tienda
@@ -19,15 +18,11 @@
       <button [routerLink]="['/about']" class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
        Sobre nosotros
       </button>
-      
     </div><br><br><br>
   </div><br>
-
   <h3 class="text-center">Productos destacados</h3>
   <div class="container text-center">
-
     <div class="row">
-      
       <div  *ngFor="let item of paleDestacado"  class="col-lg-4 col-md-6 mb-4 ">
         <div *ngIf="paleDestacado" (click)="mirarPale(item)" class="card bg " >
           <img 
@@ -35,7 +30,6 @@
           data-holder-rendered="true"
           style="height: 300px; width: 100%; display: block;"
           alt="Imagen del pale">
-
           <div class="card-body bg " >
             <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">{{item.nombre}} <span class="text-body-secondary"><br>[{{item.productos}} productos]</span></h3>
             <p class="lead">Palé de {{item.nombre}} sin revisar procedente de Amazon Devoluciones</p>
@@ -65,7 +59,6 @@
       <p class="lead">¡No te pierdas nuestras increíbles ofertas y los últimos lanzamientos! Suscríbete ahora para recibir actualizaciones
          exclusivas directamente en tu bandeja de entrada. Sé el primero en conocer nuestras promociones especiales y nuevos artículos. 
          ¡Únete a nuestra comunidad y disfruta de beneficios exclusivos!</p>
-
          <p class="lead">te garantizas acceso prioritario a nuestras ofertas más impresionantes y a los productos más innovadores.
            Imagina ser el primero en enterarte de descuentos imperdibles y de las últimas novedades que revolucionarán tu día a día. 
            ¡No dejes que nada se te escape!</p>
